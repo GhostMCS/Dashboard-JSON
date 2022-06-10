@@ -8,1000 +8,130 @@
         "env": []
     },
     {
-        "id": "dc486d6e87fda38c",
-        "type": "mqtt in",
-        "z": "3696906502618f0a",
-        "name": "",
-        "topic": "Setor",
-        "qos": "0",
-        "datatype": "auto",
-        "broker": "20acbb40fb0fff54",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 50,
-        "y": 100,
-        "wires": [
-            [
-                "aa646231b1f0d99d"
-            ]
-        ]
+        "id": "4e236920ab8e1598",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
     },
     {
-        "id": "aa646231b1f0d99d",
-        "type": "json",
-        "z": "3696906502618f0a",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": true,
-        "x": 190,
-        "y": 100,
-        "wires": [
-            [
-                "d30d66891a09ecbf"
-            ]
-        ]
+        "id": "eb036f4a0ab8e3bf",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#2200cc",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#0e9da0",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#75cc8b",
+                "baseFont": "Arial,Arial,Helvetica,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#75cc8b",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#75cc8b",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "group-textColor": {
+                    "value": "#ade1ba",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#75cc8b",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "Arial,Arial,Helvetica,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Monitor de Irrigação",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "icon",
+            "allowTempTheme": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 100,
+                "sy": 45,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
     },
     {
-        "id": "ad6583ed2d2d26e4",
-        "type": "ui_gauge",
-        "z": "3696906502618f0a",
-        "name": "Umididade do Solo",
-        "group": "6331aa3d527ac852",
+        "id": "0ff9faeccf6a4fe9",
+        "type": "ui_tab",
+        "name": "teste",
+        "icon": "dashboard",
         "order": 1,
-        "width": 4,
-        "height": 7,
-        "gtype": "wave",
-        "title": "Umididade do Solo",
-        "label": "%",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 930,
-        "y": 440,
-        "wires": []
+        "disabled": false,
+        "hidden": false
     },
     {
-        "id": "14161e2bbf6dee27",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "pressure",
-        "func": "msg.payload = (msg.payload)/10\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 700,
-        "y": 220,
-        "wires": [
-            [
-                "561b6e78c0a50259",
-                "242ebd9a98eb5a5d",
-                "c14573873f469530"
-            ]
-        ]
-    },
-    {
-        "id": "d78004a39d999869",
-        "type": "node-red-contrib-whatsapp-cmb-send-message",
-        "z": "3696906502618f0a",
-        "name": "Irrigação",
-        "account": "a5f65d1f2a8acbda",
-        "text": "!!! Alerta !!!                                                                       A irrigação pode estar com problemas",
-        "inputtypemessage": "str",
-        "rejectssl": true,
-        "x": 1380,
-        "y": 320,
-        "wires": [
-            [
-                "e519c3c3b78ede12"
-            ]
-        ]
-    },
-    {
-        "id": "c14573873f469530",
-        "type": "switch",
-        "z": "3696906502618f0a",
-        "name": "Aler.pres",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "lte",
-                "v": "0.1",
-                "vt": "num"
-            },
-            {
-                "t": "gt",
-                "v": "0.1",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 960,
-        "y": 140,
-        "wires": [
-            [
-                "98c64496f45a34ba",
-                "babcf759cf828b78"
-            ],
-            [
-                "23059b170ff019b2"
-            ]
-        ]
-    },
-    {
-        "id": "2851d99b0cf52c1e",
-        "type": "node-red-contrib-whatsapp-cmb-send-message",
-        "z": "3696906502618f0a",
-        "name": "Irrigação",
-        "account": "a5f65d1f2a8acbda",
-        "text": "!!! Alerta !!!                                                                       A humidade do solo esta baixa, recomenda-se ligar a irrigação",
-        "inputtypemessage": "str",
-        "rejectssl": true,
-        "x": 1380,
-        "y": 360,
-        "wires": [
-            [
-                "e519c3c3b78ede12"
-            ]
-        ]
-    },
-    {
-        "id": "5eeadf827dea5574",
-        "type": "node-red-contrib-whatsapp-cmb-send-message",
-        "z": "3696906502618f0a",
-        "name": "Irrigação",
-        "account": "a5f65d1f2a8acbda",
-        "text": "!!! Alerta !!!                                                                       A humidade do solo esta alta, recomenda-se desligar a irrigação",
-        "inputtypemessage": "str",
-        "rejectssl": true,
-        "x": 1380,
-        "y": 400,
-        "wires": [
-            [
-                "e519c3c3b78ede12"
-            ]
-        ]
-    },
-    {
-        "id": "afd298c1893cf7f0",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "soil mois",
-        "func": "msg.payload = (msg.payload)/20;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 700,
-        "y": 260,
-        "wires": [
-            [
-                "fa2786867bd0a1b5",
-                "ad6583ed2d2d26e4",
-                "242ebd9a98eb5a5d"
-            ]
-        ]
-    },
-    {
-        "id": "c13bcb855f020f44",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "humidity",
-        "func": "msg.payload = 50 + (msg.payload)/2;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 700,
-        "y": 300,
-        "wires": [
-            [
-                "6ac4f21b7351e69a",
-                "242ebd9a98eb5a5d"
-            ]
-        ]
-    },
-    {
-        "id": "fa2786867bd0a1b5",
-        "type": "switch",
-        "z": "3696906502618f0a",
-        "name": "Aler.h.s",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "lt",
-                "v": "90",
-                "vt": "num"
-            },
-            {
-                "t": "gt",
-                "v": "20",
-                "vt": "num"
-            },
-            {
-                "t": "lte",
-                "v": "20",
-                "vt": "num"
-            },
-            {
-                "t": "gte",
-                "v": "90",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 4,
-        "x": 960,
-        "y": 200,
-        "wires": [
-            [
-                "e1b4313caa59333c"
-            ],
-            [
-                "e1b4313caa59333c"
-            ],
-            [
-                "4c544a9701df741f",
-                "8709d0c891ce3094"
-            ],
-            [
-                "46dff8c38d6b8edc",
-                "a99c7d83bd4e3f4a"
-            ]
-        ]
-    },
-    {
-        "id": "b94ecede101fa420",
-        "type": "ui_chart",
-        "z": "3696906502618f0a",
-        "name": "Temperatura Ambiente",
-        "group": "6331aa3d527ac852",
-        "order": 9,
-        "width": 0,
-        "height": 0,
-        "label": "Temperatura Ambiente",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "5",
-        "removeOlderPoints": "10",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "x": 940,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "561b6e78c0a50259",
-        "type": "ui_gauge",
-        "z": "3696906502618f0a",
-        "name": "Pressão da Água",
-        "group": "6331aa3d527ac852",
-        "order": 8,
-        "width": 4,
-        "height": 6,
-        "gtype": "gage",
-        "title": "Diferença de Pressão da Água",
-        "label": "Bar",
-        "format": "{{value}}",
-        "min": 0,
-        "max": 10,
-        "colors": [
-            "#02edde",
-            "#042195",
-            "#270240"
-        ],
-        "seg1": "3",
-        "seg2": "5",
-        "x": 930,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "6ac4f21b7351e69a",
-        "type": "ui_gauge",
-        "z": "3696906502618f0a",
-        "name": "Umidade Ambiente",
-        "group": "6331aa3d527ac852",
-        "order": 7,
-        "width": 4,
-        "height": 6,
-        "gtype": "donut",
-        "title": "Umidade Ambiente",
-        "label": "%",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 930,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "a2cee65533b72fe0",
-        "type": "mqtt in",
-        "z": "3696906502618f0a",
-        "name": "",
-        "topic": "Parametro",
-        "qos": "0",
-        "datatype": "auto",
-        "broker": "20acbb40fb0fff54",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 60,
-        "y": 40,
-        "wires": [
-            [
-                "e7840955ef6c9e3b"
-            ]
-        ]
-    },
-    {
-        "id": "e7840955ef6c9e3b",
-        "type": "json",
-        "z": "3696906502618f0a",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": true,
-        "x": 190,
-        "y": 40,
-        "wires": [
-            [
-                "78ea80f2abb345a4"
-            ]
-        ]
-    },
-    {
-        "id": "93804c8be47cbf7b",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "tempera",
-        "func": "msg.payload = (msg.payload)/2;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 700,
-        "y": 340,
-        "wires": [
-            [
-                "b94ecede101fa420",
-                "242ebd9a98eb5a5d"
-            ]
-        ]
-    },
-    {
-        "id": "719d35d1d18adeb1",
-        "type": "mysql",
-        "z": "3696906502618f0a",
-        "mydb": "216048ed3f826fab",
-        "name": "Posting A",
-        "x": 660,
-        "y": 60,
-        "wires": [
-            [
-                "666245dbc865a329"
-            ]
-        ]
-    },
-    {
-        "id": "78ea80f2abb345a4",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "",
-        "func": "var soil_moisture = msg.payload.soil_moisture;\nvar pressure = msg.payload.pressure;\nvar humidity = msg.payload.humidity;\nvar temperatury = msg.payload.temperatury;\n\nmsg.topic = \"INSERT INTO tabela_a (soil_moisture, pressure, humidity, temperatury) VALUES (\"+ soil_moisture +\",\"+ pressure +\",\"+ humidity +\",\"+ temperatury +\" );\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 40,
-        "wires": [
-            [
-                "52d44786c25f3c09",
-                "fcf5ca353f767f38"
-            ]
-        ]
-    },
-    {
-        "id": "c8f55d142346db53",
-        "type": "mysql",
-        "z": "3696906502618f0a",
-        "mydb": "216048ed3f826fab",
-        "name": "Geting A",
-        "x": 360,
-        "y": 220,
-        "wires": [
-            [
-                "37e6300f8a383912",
-                "697a0ab847429419",
-                "91c749bcc6077c49",
-                "79752dc232ed229c"
-            ]
-        ]
-    },
-    {
-        "id": "59dc53ad9339749c",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "",
-        "func": "msg.payload = true;\nmsg.topic = \"SELECT * FROM tabela_a order by timeStamp DESC limit 2\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 220,
-        "y": 220,
-        "wires": [
-            [
-                "c8f55d142346db53"
-            ]
-        ]
-    },
-    {
-        "id": "d30d66891a09ecbf",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "",
-        "func": "var soil_moisture_1 = msg.payload.soil_moisture_1;\nvar pressure_1 = msg.payload.pressure_1;\nvar humidity_1 = msg.payload.humidity_1;\nvar temperatury_1 = msg.payload.temperatury_1;\n\nmsg.topic = \"INSERT INTO tabela_a (soil_moisture_1, pressure_1, humidity_1, temperatury_1) VALUES (\"+ soil_moisture_1 +\",\"+ pressure_1 +\",\"+ humidity_1 +\",\"+ temperatury_1 +\" );\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 100,
-        "wires": [
-            [
-                "d9821f1805bcadbd"
-            ]
-        ]
-    },
-    {
-        "id": "a63a596a0e853eb1",
-        "type": "debug",
-        "z": "3696906502618f0a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1370,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "babcf759cf828b78",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "",
-        "func": "msg.payload = \"!!! Alerta !!!                                                                       A irrigação pode estar com problemas\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1200,
-        "y": 80,
-        "wires": [
-            [
-                "a63a596a0e853eb1",
-                "6d2a0bd2def98827"
-            ]
-        ]
-    },
-    {
-        "id": "8709d0c891ce3094",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "",
-        "func": "msg.payload = \"!!! Alerta !!!                                                                       A humidade do solo esta baixa, recomenda-se ligar a irrigação\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1200,
-        "y": 200,
-        "wires": [
-            [
-                "a63a596a0e853eb1",
-                "ab9f6d303de2d0c5"
-            ]
-        ]
-    },
-    {
-        "id": "a99c7d83bd4e3f4a",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "",
-        "func": "msg.payload = \"!!! Alerta !!!                                                                       A humidade do solo esta alta, recomenda-se desligar a irrigação\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1200,
-        "y": 240,
-        "wires": [
-            [
-                "a63a596a0e853eb1",
-                "ab9f6d303de2d0c5"
-            ]
-        ]
-    },
-    {
-        "id": "23059b170ff019b2",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "",
-        "func": "msg.payload = \"Funcionamento normal\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1200,
-        "y": 120,
-        "wires": [
-            [
-                "a63a596a0e853eb1",
-                "6d2a0bd2def98827"
-            ]
-        ]
-    },
-    {
-        "id": "6eaecf4c67056705",
-        "type": "mqtt in",
-        "z": "3696906502618f0a",
-        "name": "",
-        "topic": "Parametro",
-        "qos": "0",
-        "datatype": "auto",
-        "broker": "20acbb40fb0fff54",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 60,
-        "y": 220,
-        "wires": [
-            [
-                "59dc53ad9339749c"
-            ]
-        ]
-    },
-    {
-        "id": "23797515f6b1b664",
-        "type": "debug",
-        "z": "3696906502618f0a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "6d2a0bd2def98827",
-        "type": "ui_text",
-        "z": "3696906502618f0a",
-        "group": "6331aa3d527ac852",
-        "order": 10,
-        "width": 6,
-        "height": 2,
-        "name": "",
-        "label": "Alertas da Produção:",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "x": 1400,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "ab9f6d303de2d0c5",
-        "type": "ui_text",
-        "z": "3696906502618f0a",
-        "group": "6331aa3d527ac852",
-        "order": 11,
-        "width": 6,
-        "height": 2,
-        "name": "",
-        "label": "Alertas da Irrigação:",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "x": 1400,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "52d44786c25f3c09",
-        "type": "debug",
-        "z": "3696906502618f0a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "666245dbc865a329",
-        "type": "debug",
-        "z": "3696906502618f0a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "242ebd9a98eb5a5d",
-        "type": "debug",
-        "z": "3696906502618f0a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 910,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "fcf5ca353f767f38",
-        "type": "delay",
-        "z": "3696906502618f0a",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "10",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 500,
-        "y": 40,
-        "wires": [
-            [
-                "719d35d1d18adeb1"
-            ]
-        ]
-    },
-    {
-        "id": "d9821f1805bcadbd",
-        "type": "delay",
-        "z": "3696906502618f0a",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 500,
-        "y": 100,
-        "wires": [
-            [
-                "719d35d1d18adeb1",
-                "23797515f6b1b664"
-            ]
-        ]
-    },
-    {
-        "id": "37e6300f8a383912",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "pressure",
-        "func": "msg.payload = (msg.payload[0].pressure - msg.payload[1].pressure_1);\nif(msg.payload != 0 && msg.payload >= 0){\n    return msg;\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 220,
-        "wires": [
-            [
-                "14161e2bbf6dee27"
-            ]
-        ]
-    },
-    {
-        "id": "697a0ab847429419",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "soil mois",
-        "func": "msg.payload = (msg.payload[0].soil_moisture + msg.payload[1].soil_moisture_1);\nif(msg.payload != 0){\n    return msg;\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 260,
-        "wires": [
-            [
-                "afd298c1893cf7f0"
-            ]
-        ]
-    },
-    {
-        "id": "91c749bcc6077c49",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "humidity",
-        "func": "msg.payload = (msg.payload[0].humidity + msg.payload[1].humidity_1);\nif(msg.payload != 0){\n    return msg;\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 300,
-        "wires": [
-            [
-                "c13bcb855f020f44"
-            ]
-        ]
-    },
-    {
-        "id": "79752dc232ed229c",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "tempera",
-        "func": "msg.payload = (msg.payload[0].temperatury + msg.payload[1].temperatury_1);\nif(msg.payload != 0){\n    return msg;\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 340,
-        "wires": [
-            [
-                "93804c8be47cbf7b"
-            ]
-        ]
-    },
-    {
-        "id": "e1b4313caa59333c",
-        "type": "function",
-        "z": "3696906502618f0a",
-        "name": "",
-        "func": "msg.payload = \"Funcionamento normal\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1200,
-        "y": 160,
-        "wires": [
-            [
-                "ab9f6d303de2d0c5"
-            ]
-        ]
-    },
-    {
-        "id": "46dff8c38d6b8edc",
-        "type": "ui_switch",
-        "z": "3696906502618f0a",
-        "name": "",
-        "label": "            Umidade Alta:",
-        "tooltip": "",
-        "group": "6331aa3d527ac852",
-        "order": 4,
-        "width": 2,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "wb_cloudy",
-        "oncolor": "cyan",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "cloud_off",
-        "offcolor": "white",
-        "animate": true,
-        "x": 1180,
-        "y": 400,
-        "wires": [
-            [
-                "5eeadf827dea5574"
-            ]
-        ]
-    },
-    {
-        "id": "4c544a9701df741f",
-        "type": "ui_switch",
-        "z": "3696906502618f0a",
-        "name": "",
-        "label": "            Umidade Baixa:",
-        "tooltip": "",
-        "group": "6331aa3d527ac852",
-        "order": 5,
-        "width": 2,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "wb_sunny",
-        "oncolor": "orange",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "wb_sunny",
-        "offcolor": "white",
-        "animate": true,
-        "x": 1180,
-        "y": 360,
-        "wires": [
-            [
-                "2851d99b0cf52c1e"
-            ]
-        ]
-    },
-    {
-        "id": "98c64496f45a34ba",
-        "type": "ui_switch",
-        "z": "3696906502618f0a",
-        "name": "",
-        "label": "Alerta Irrigação:",
-        "tooltip": "",
-        "group": "6331aa3d527ac852",
+        "id": "a1748935fb100559",
+        "type": "ui_group",
+        "name": "PIN",
+        "tab": "9bb27767990224ac",
         "order": 2,
-        "width": 2,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "notifications_active",
-        "oncolor": "red",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "notifications_off",
-        "offcolor": "white",
-        "animate": false,
-        "x": 1180,
-        "y": 320,
-        "wires": [
-            [
-                "d78004a39d999869"
-            ]
-        ]
-    },
-    {
-        "id": "e519c3c3b78ede12",
-        "type": "debug",
-        "z": "3696906502618f0a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1550,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "f5436db190cf04d5",
-        "type": "ui_spacer",
-        "z": "3696906502618f0a",
-        "name": "spacer",
-        "group": "6331aa3d527ac852",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "1f8bf93bad61e4a0",
-        "type": "ui_spacer",
-        "z": "3696906502618f0a",
-        "name": "spacer",
-        "group": "6331aa3d527ac852",
-        "order": 6,
-        "width": 1,
-        "height": 1
+        "disp": true,
+        "width": "6",
+        "collapse": false
     },
     {
         "id": "20acbb40fb0fff54",
@@ -1040,9 +170,256 @@
         "collapse": false
     },
     {
-        "id": "a5f65d1f2a8acbda",
+        "id": "9bb27767990224ac",
+        "type": "ui_tab",
+        "name": "teste 1",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3a9a19b4a0fb534a",
         "type": "node-red-contrib-whatsapp-cmb-account",
-        "name": "Mateus 88"
+        "name": "Mateus"
+    },
+    {
+        "id": "7c9c7bf8.8d9ad4",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mcsghost.duckdns.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e649ed5.5492f9",
+        "type": "ui_group",
+        "name": "Gráficos",
+        "tab": "e4c7124a.e939a8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "63328d8f.ddacac",
+        "type": "ui_group",
+        "name": "Sensor",
+        "tab": "e4c7124a.e939a8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2bc52c51.dbbb94",
+        "type": "mqtt-broker",
+        "name": "mqtt_local",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "fff557ce.191e68",
+        "type": "ui_group",
+        "name": "LEDs",
+        "tab": "e4c7124a.e939a8",
+        "order": 3,
+        "disp": true,
+        "width": 3,
+        "collapse": false
+    },
+    {
+        "id": "3dbb0e57.3e8602",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "lmcnascimento.duckdns.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6c5a53ef.923834",
+        "type": "ui_group",
+        "name": "grafico_mysql",
+        "tab": "e4c7124a.e939a8",
+        "order": 4,
+        "disp": true,
+        "width": "18",
+        "collapse": false
+    },
+    {
+        "id": "3a96fa37.09d08e",
+        "type": "ui_group",
+        "name": "Tabela mysql",
+        "tab": "e4c7124a.e939a8",
+        "order": 5,
+        "disp": true,
+        "width": 11,
+        "collapse": false
+    },
+    {
+        "id": "e4c7124a.e939a8",
+        "type": "ui_tab",
+        "name": "FreeRtos",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d48e934a.0e9208",
+        "type": "MySQLdatabase",
+        "name": "valores",
+        "host": "sql-lorena.c8a6qfkprtnn.us-east-1.rds.amazonaws.com",
+        "port": "3306",
+        "db": "projetolo",
+        "tz": "hh:mm",
+        "charset": "UTF8"
+    },
+    {
+        "id": "bcd4d8f2.a53d68",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "avrchaves.duckdns.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "33054138.0561a6",
+        "type": "ui_group",
+        "name": "Gráficos",
+        "tab": "f484a0a.6c67a6",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "71b0bf5d.a9952",
+        "type": "ui_group",
+        "name": "Sensor",
+        "tab": "f484a0a.6c67a6",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f484a0a.6c67a6",
+        "type": "ui_tab",
+        "name": "FreeRtos",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "07fb928bda75838a",
+        "type": "ui_group",
+        "name": "LEDs",
+        "tab": "f484a0a.6c67a6",
+        "order": 3,
+        "disp": true,
+        "width": 3,
+        "collapse": false
+    },
+    {
+        "id": "c95337d79fcd5c7c",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "enderecourldobancodedados",
+        "port": "3306",
+        "db": "basedados",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "05188fae569d053d",
+        "type": "ui_group",
+        "name": "grafico_mysql",
+        "tab": "f484a0a.6c67a6",
+        "order": 4,
+        "disp": true,
+        "width": "18",
+        "collapse": false
+    },
+    {
+        "id": "57500ebcf46fb4fe",
+        "type": "ui_group",
+        "name": "Tabela mysql",
+        "tab": "f484a0a.6c67a6",
+        "order": 5,
+        "disp": true,
+        "width": 11,
+        "collapse": false
     },
     {
         "id": "216048ed3f826fab",
@@ -1055,12 +432,1436 @@
         "charset": "UTF8"
     },
     {
-        "id": "0ff9faeccf6a4fe9",
+        "id": "6e212043a23c2aa5",
+        "type": "MySQLdatabase",
+        "name": "tabela_a1",
+        "host": "trabalho.cdvctyqxafpw.us-east-1.rds.amazonaws.com",
+        "port": "3306",
+        "db": "trabalho",
+        "tz": "hh:mm",
+        "charset": "UTF8"
+    },
+    {
+        "id": "a5f65d1f2a8acbda",
+        "type": "node-red-contrib-whatsapp-cmb-account",
+        "name": "Mateus 88"
+    },
+    {
+        "id": "d4851ecc.b4b53",
+        "type": "ui_group",
+        "name": "Keypad",
+        "tab": "f71dee08.232e9",
+        "order": 5,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "f71dee08.232e9",
         "type": "ui_tab",
-        "name": "teste",
-        "icon": "dashboard",
+        "name": "Button Panel",
+        "icon": "dashboard"
+    },
+    {
+        "id": "d3d0b69d28c88fef",
+        "type": "MySQLdatabase",
+        "name": "tabela_a2",
+        "host": "trabalho.cdvctyqxafpw.us-east-1.rds.amazonaws.com",
+        "port": "3306",
+        "db": "trabalho",
+        "tz": "hh:mm",
+        "charset": "UTF8"
+    },
+    {
+        "id": "ec984d67994e7cfb",
+        "type": "local-storage",
+        "name": "Mateus"
+    },
+    {
+        "id": "4cfed27f5fc0543a",
+        "type": "json-db-collection",
+        "name": "",
+        "collection": "mateus",
+        "save": true
+    },
+    {
+        "id": "cc68217a7a40496d",
+        "type": "json-db-collection",
+        "name": "",
+        "collection": "lorena",
+        "save": true
+    },
+    {
+        "id": "074cc150ab0b0877",
+        "type": "ui_spacer",
+        "z": "3696906502618f0a",
+        "name": "spacer",
+        "group": "6331aa3d527ac852",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "dc486d6e87fda38c",
+        "type": "mqtt in",
+        "z": "3696906502618f0a",
+        "name": "",
+        "topic": "Setor",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "3dbb0e57.3e8602",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 160,
+        "wires": [
+            [
+                "e7840955ef6c9e3b"
+            ]
+        ]
+    },
+    {
+        "id": "ad6583ed2d2d26e4",
+        "type": "ui_gauge",
+        "z": "3696906502618f0a",
+        "name": "Umididade do Solo",
+        "group": "6331aa3d527ac852",
         "order": 1,
-        "disabled": false,
-        "hidden": false
+        "width": 4,
+        "height": 7,
+        "gtype": "wave",
+        "title": "Umididade do Solo",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 870,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "d78004a39d999869",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "3696906502618f0a",
+        "name": "Irrigação",
+        "account": "a5f65d1f2a8acbda",
+        "text": "!!! Alerta !!!                                                                       A irrigação pode estar com problemas",
+        "inputtypemessage": "str",
+        "rejectssl": false,
+        "x": 1440,
+        "y": 300,
+        "wires": [
+            [
+                "e519c3c3b78ede12"
+            ]
+        ]
+    },
+    {
+        "id": "c14573873f469530",
+        "type": "switch",
+        "z": "3696906502618f0a",
+        "name": "Aler.pres",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0.9",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0.2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "0.6",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": true,
+        "outputs": 4,
+        "x": 840,
+        "y": 240,
+        "wires": [
+            [
+                "342a720ba24f9032"
+            ],
+            [
+                "babcf759cf828b78",
+                "98c64496f45a34ba"
+            ],
+            [
+                "9dee47b55bbde446"
+            ],
+            [
+                "23059b170ff019b2"
+            ]
+        ]
+    },
+    {
+        "id": "2851d99b0cf52c1e",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "3696906502618f0a",
+        "name": "Irrigação",
+        "account": "a5f65d1f2a8acbda",
+        "text": "!!! Alerta !!!                                                                       A humidade do solo esta baixa, recomenda-se ligar a irrigação",
+        "inputtypemessage": "str",
+        "rejectssl": false,
+        "x": 1440,
+        "y": 340,
+        "wires": [
+            [
+                "e519c3c3b78ede12"
+            ]
+        ]
+    },
+    {
+        "id": "5eeadf827dea5574",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "3696906502618f0a",
+        "name": "Irrigação",
+        "account": "a5f65d1f2a8acbda",
+        "text": "!!! Alerta !!!                                                                       A humidade do solo esta alta, recomenda-se desligar a irrigação",
+        "inputtypemessage": "str",
+        "rejectssl": false,
+        "x": 1440,
+        "y": 380,
+        "wires": [
+            [
+                "e519c3c3b78ede12"
+            ]
+        ]
+    },
+    {
+        "id": "fa2786867bd0a1b5",
+        "type": "switch",
+        "z": "3696906502618f0a",
+        "name": "Aler.h.s",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "80",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "40",
+                "vt": "num"
+            },
+            {
+                "t": "lte",
+                "v": "40",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "80",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 840,
+        "y": 320,
+        "wires": [
+            [
+                "e1b4313caa59333c"
+            ],
+            [
+                "e1b4313caa59333c"
+            ],
+            [
+                "4c544a9701df741f",
+                "8709d0c891ce3094"
+            ],
+            [
+                "46dff8c38d6b8edc",
+                "a99c7d83bd4e3f4a"
+            ]
+        ]
+    },
+    {
+        "id": "b94ecede101fa420",
+        "type": "ui_chart",
+        "z": "3696906502618f0a",
+        "name": "Temperatura Ambiente",
+        "group": "6331aa3d527ac852",
+        "order": 8,
+        "width": 12,
+        "height": 4,
+        "label": "Temperatura Ambiente",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "10",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 880,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "561b6e78c0a50259",
+        "type": "ui_gauge",
+        "z": "3696906502618f0a",
+        "name": "Pressão da Água",
+        "group": "6331aa3d527ac852",
+        "order": 7,
+        "width": 4,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Pressão da Água",
+        "label": "Bar",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#55ed02",
+            "#049565",
+            "#0bc1be"
+        ],
+        "seg1": "0.3",
+        "seg2": "0.7",
+        "x": 870,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6ac4f21b7351e69a",
+        "type": "ui_gauge",
+        "z": "3696906502618f0a",
+        "name": "Umidade Ambiente",
+        "group": "6331aa3d527ac852",
+        "order": 6,
+        "width": 4,
+        "height": 6,
+        "gtype": "donut",
+        "title": "Umidade Ambiente",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#d37217",
+            "#efdc0b",
+            "#37b800"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "x": 870,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "a2cee65533b72fe0",
+        "type": "mqtt in",
+        "z": "3696906502618f0a",
+        "name": "",
+        "topic": "Parametro",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "20acbb40fb0fff54",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 80,
+        "y": 100,
+        "wires": [
+            [
+                "aa646231b1f0d99d"
+            ]
+        ]
+    },
+    {
+        "id": "719d35d1d18adeb1",
+        "type": "mysql",
+        "z": "3696906502618f0a",
+        "mydb": "216048ed3f826fab",
+        "name": "Posting A0",
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "ede2b0099cbc9e9c"
+            ]
+        ]
+    },
+    {
+        "id": "c8f55d142346db53",
+        "type": "mysql",
+        "z": "3696906502618f0a",
+        "mydb": "216048ed3f826fab",
+        "name": "Getting A0",
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "697a0ab847429419",
+                "91c749bcc6077c49",
+                "79752dc232ed229c",
+                "37e6300f8a383912"
+            ]
+        ]
+    },
+    {
+        "id": "59dc53ad9339749c",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "msg.payload = true;\nmsg.topic = \"SELECT * FROM tabela_a order by timeStamp DESC limit 2\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 380,
+        "wires": [
+            [
+                "c8f55d142346db53"
+            ]
+        ]
+    },
+    {
+        "id": "a63a596a0e853eb1",
+        "type": "debug",
+        "z": "3696906502618f0a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "babcf759cf828b78",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "msg.payload = \"!!! Alerta !!!                                                                       A irrigação pode estar com problemas\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 60,
+        "wires": [
+            [
+                "a63a596a0e853eb1",
+                "6d2a0bd2def98827"
+            ]
+        ]
+    },
+    {
+        "id": "8709d0c891ce3094",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "msg.payload = \"!!! Alerta !!!                                                                       A humidade do solo esta baixa, recomenda-se ligar a irrigação\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 220,
+        "wires": [
+            [
+                "a63a596a0e853eb1",
+                "ab9f6d303de2d0c5"
+            ]
+        ]
+    },
+    {
+        "id": "a99c7d83bd4e3f4a",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "msg.payload = \"!!! Alerta !!!                                                                       A humidade do solo esta alta, recomenda-se desligar a irrigação\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 260,
+        "wires": [
+            [
+                "a63a596a0e853eb1",
+                "ab9f6d303de2d0c5"
+            ]
+        ]
+    },
+    {
+        "id": "23059b170ff019b2",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "msg.payload = \"Funcionamento normal\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 140,
+        "wires": [
+            [
+                "a63a596a0e853eb1",
+                "6d2a0bd2def98827"
+            ]
+        ]
+    },
+    {
+        "id": "6d2a0bd2def98827",
+        "type": "ui_text",
+        "z": "3696906502618f0a",
+        "group": "6331aa3d527ac852",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Alertas da Produção:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 1320,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ab9f6d303de2d0c5",
+        "type": "ui_text",
+        "z": "3696906502618f0a",
+        "group": "6331aa3d527ac852",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Alertas da Irrigação:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 1320,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "37e6300f8a383912",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "pressure",
+        "func": "\nvar a;\nvar b;\nif(msg.payload[1].pressure_1 != 0 && msg.payload[0].pressure != 0)\n{\n    msg.payload = msg.payload[0].pressure-300;\n}\nelse\n{\n    msg.payload = msg.payload[1].pressure-300;\n}\nmsg.payload = parseFloat((msg.payload / 4095) * 12.0).toFixed(1);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 380,
+        "wires": [
+            [
+                "3a4dee2a99b1406a"
+            ]
+        ]
+    },
+    {
+        "id": "697a0ab847429419",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "soil mois",
+        "func": "if(msg.payload[0].soil_moisture != 0 && msg.payload[1].soil_moisture_1 != 0 )\n{\n    msg.payload = (msg.payload[0].soil_moisture + msg.payload[1].soil_moisture_1)/2;\n}\nelse if(msg.payload[1].soil_moisture != 0 && msg.payload[0].soil_moisture_1 != 0 )\n{\n    msg.payload = (msg.payload[1].soil_moisture + msg.payload[0].soil_moisture_1)/2;\n}\nelse if(msg.payload[0].soil_moisture != 0 && msg.payload[1].soil_moisture_1 == 0 )\n{\n    msg.payload = msg.payload[0].soil_moisture;\n}\nelse\n{\n    msg.payload = msg.payload[1].soil_moisture_1;\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 420,
+        "wires": [
+            [
+                "ad6583ed2d2d26e4",
+                "242ebd9a98eb5a5d",
+                "fa2786867bd0a1b5"
+            ]
+        ]
+    },
+    {
+        "id": "91c749bcc6077c49",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "humidity",
+        "func": "if(msg.payload[0].humidity != 0 && msg.payload[1].humidity_1 != 0 )\n{\n    msg.payload = (msg.payload[0].humidity + msg.payload[1].humidity_1)/2;\n}\nelse if(msg.payload[1].humidity != 0 && msg.payload[0].humidity_1 != 0 )\n{\n    msg.payload = (msg.payload[1].humidity + msg.payload[0].humidity_1)/2;\n}\nelse if(msg.payload[0].humidity != 0 && msg.payload[1].humidity_1 == 0 )\n{\n    msg.payload = msg.payload[0].humidity;\n}\nelse\n{\n    msg.payload = msg.payload[1].humidity_1;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 460,
+        "wires": [
+            [
+                "6ac4f21b7351e69a",
+                "242ebd9a98eb5a5d"
+            ]
+        ]
+    },
+    {
+        "id": "79752dc232ed229c",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "tempera",
+        "func": "\nif(msg.payload[0].temperatury != 0 && msg.payload[1].temperatury_1 != 0 )\n{\n    msg.payload = (msg.payload[0].temperatury + msg.payload[1].temperatury_1)/2;\n}\nelse if(msg.payload[1].temperatury != 0 && msg.payload[0].temperatury_1 != 0 )\n{\n    msg.payload = (msg.payload[1].temperatury + msg.payload[0].temperatury_1)/2;\n}\nelse if(msg.payload[0].temperatury != 0 && msg.payload[1].temperatury_1 == 0 )\n{\n    msg.payload = msg.payload[0].temperatury;\n}\nelse\n{\n    msg.payload = msg.payload[1].temperatury_1;\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 500,
+        "wires": [
+            [
+                "b94ecede101fa420",
+                "242ebd9a98eb5a5d"
+            ]
+        ]
+    },
+    {
+        "id": "e1b4313caa59333c",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "msg.payload = \"Porcentagem adequada de umidade\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 180,
+        "wires": [
+            [
+                "ab9f6d303de2d0c5",
+                "a63a596a0e853eb1"
+            ]
+        ]
+    },
+    {
+        "id": "46dff8c38d6b8edc",
+        "type": "ui_switch",
+        "z": "3696906502618f0a",
+        "name": "",
+        "label": "            Umidade Alta:",
+        "tooltip": "",
+        "group": "6331aa3d527ac852",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "wb_cloudy",
+        "oncolor": "cyan",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "cloud_off",
+        "offcolor": "white",
+        "animate": true,
+        "x": 1100,
+        "y": 380,
+        "wires": [
+            [
+                "4b6d6234da11d8a8"
+            ]
+        ]
+    },
+    {
+        "id": "4c544a9701df741f",
+        "type": "ui_switch",
+        "z": "3696906502618f0a",
+        "name": "",
+        "label": "            Umidade Baixa:",
+        "tooltip": "",
+        "group": "6331aa3d527ac852",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "wb_sunny",
+        "oncolor": "orange",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "wb_sunny",
+        "offcolor": "white",
+        "animate": true,
+        "x": 1100,
+        "y": 340,
+        "wires": [
+            [
+                "2f86453bd2f3b3da"
+            ]
+        ]
+    },
+    {
+        "id": "98c64496f45a34ba",
+        "type": "ui_switch",
+        "z": "3696906502618f0a",
+        "name": "",
+        "label": "Alerta Irrigação:",
+        "tooltip": "",
+        "group": "6331aa3d527ac852",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "notifications_active",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "notifications_off",
+        "offcolor": "white",
+        "animate": true,
+        "x": 1100,
+        "y": 300,
+        "wires": [
+            [
+                "c571b6fc7b5bb0c5"
+            ]
+        ]
+    },
+    {
+        "id": "e519c3c3b78ede12",
+        "type": "debug",
+        "z": "3696906502618f0a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1610,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "bc1a965c189fab75",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "var soil_moisture = msg.payload.soil_moisture_1;\nvar pressure = msg.payload.pressure_1;\nvar humidity = msg.payload.humidity_1;\nvar temperatury = msg.payload.temperatury_1;\n\nmsg.topic = \"INSERT INTO tabela_a (soil_moisture_1, pressure_1, humidity_1, temperatury_1) VALUES (\"+ soil_moisture_1 +\",\"+ pressure_1 +\",\"+ humidity_1 +\",\"+ temperatury_1 +\" );\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "719d35d1d18adeb1"
+            ]
+        ]
+    },
+    {
+        "id": "15a8778d46356fc1",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "var soil_moisture = msg.payload.soil_moisture;\nvar pressure = msg.payload.pressure;\nvar humidity = msg.payload.humidity;\nvar temperatury = msg.payload.temperatury;\n\nmsg.topic = \"INSERT INTO tabela_a (soil_moisture, pressure, humidity, temperatury) VALUES (\"+ soil_moisture +\",\"+ pressure +\",\"+ humidity +\",\"+ temperatury +\" );\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 160,
+        "wires": [
+            [
+                "719d35d1d18adeb1"
+            ]
+        ]
+    },
+    {
+        "id": "5ddb9c7c48ee8a4c",
+        "type": "inject",
+        "z": "3696906502618f0a",
+        "name": "Time",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 380,
+        "wires": [
+            [
+                "59dc53ad9339749c"
+            ]
+        ]
+    },
+    {
+        "id": "aa646231b1f0d99d",
+        "type": "json",
+        "z": "3696906502618f0a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "bc1a965c189fab75"
+            ]
+        ]
+    },
+    {
+        "id": "e7840955ef6c9e3b",
+        "type": "json",
+        "z": "3696906502618f0a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "15a8778d46356fc1"
+            ]
+        ]
+    },
+    {
+        "id": "3a4dee2a99b1406a",
+        "type": "json",
+        "z": "3696906502618f0a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 690,
+        "y": 380,
+        "wires": [
+            [
+                "561b6e78c0a50259",
+                "c14573873f469530",
+                "242ebd9a98eb5a5d"
+            ]
+        ]
+    },
+    {
+        "id": "242ebd9a98eb5a5d",
+        "type": "debug",
+        "z": "3696906502618f0a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "9dee47b55bbde446",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "msg.payload = \"Sistema desligado\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 100,
+        "wires": [
+            [
+                "6d2a0bd2def98827"
+            ]
+        ]
+    },
+    {
+        "id": "ede2b0099cbc9e9c",
+        "type": "debug",
+        "z": "3696906502618f0a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "342a720ba24f9032",
+        "type": "function",
+        "z": "3696906502618f0a",
+        "name": "",
+        "func": "msg.payload = \"!!! Alerta !!!                                                                       Aspersores pode esta fechado\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 20,
+        "wires": [
+            [
+                "6d2a0bd2def98827"
+            ]
+        ]
+    },
+    {
+        "id": "c571b6fc7b5bb0c5",
+        "type": "delay",
+        "z": "3696906502618f0a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1280,
+        "y": 300,
+        "wires": [
+            [
+                "d78004a39d999869"
+            ]
+        ]
+    },
+    {
+        "id": "2f86453bd2f3b3da",
+        "type": "delay",
+        "z": "3696906502618f0a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1280,
+        "y": 340,
+        "wires": [
+            [
+                "2851d99b0cf52c1e"
+            ]
+        ]
+    },
+    {
+        "id": "4b6d6234da11d8a8",
+        "type": "delay",
+        "z": "3696906502618f0a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1280,
+        "y": 380,
+        "wires": [
+            [
+                "5eeadf827dea5574"
+            ]
+        ]
+    },
+    {
+        "id": "a609c3ae72c9d873",
+        "type": "mysql",
+        "z": "4e236920ab8e1598",
+        "mydb": "6e212043a23c2aa5",
+        "name": "Getting A1",
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "55654ba99b8e96e7"
+            ]
+        ]
+    },
+    {
+        "id": "1358a5da16307f0e",
+        "type": "function",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "func": "msg.payload = true;\nmsg.topic = \"SELECT temperatury, humidity, soil_moisture, pressure FROM tabela_a1 order by timeStamp DESC limit 1\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "a609c3ae72c9d873"
+            ]
+        ]
+    },
+    {
+        "id": "3c30dc1547363f87",
+        "type": "inject",
+        "z": "4e236920ab8e1598",
+        "name": "Time",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "1358a5da16307f0e",
+                "26fac42dbb92f955"
+            ]
+        ]
+    },
+    {
+        "id": "8240f445b16ef695",
+        "type": "mysql",
+        "z": "4e236920ab8e1598",
+        "mydb": "d3d0b69d28c88fef",
+        "name": "Getting A2",
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "2f2db57e1e7b1a82"
+            ]
+        ]
+    },
+    {
+        "id": "26fac42dbb92f955",
+        "type": "function",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "func": "msg.payload = true;\nmsg.topic = \"SELECT temperatury_1, humidity_1, soil_moisture_1, pressure_1 FROM tabela_a2 order by timeStamp DESC limit 1\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 220,
+        "wires": [
+            [
+                "8240f445b16ef695"
+            ]
+        ]
+    },
+    {
+        "id": "55654ba99b8e96e7",
+        "type": "DataIn",
+        "z": "4e236920ab8e1598",
+        "collection": "4cfed27f5fc0543a",
+        "name": "",
+        "update": false,
+        "path": "Tabela A1",
+        "x": 580,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2f2db57e1e7b1a82",
+        "type": "DataIn",
+        "z": "4e236920ab8e1598",
+        "collection": "cc68217a7a40496d",
+        "name": "",
+        "update": false,
+        "path": "Tabela A2",
+        "x": 580,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3dac765f69b7a236",
+        "type": "DataOut",
+        "z": "4e236920ab8e1598",
+        "collection": "4cfed27f5fc0543a",
+        "name": "",
+        "path": "Tabela A1",
+        "error": true,
+        "x": 280,
+        "y": 300,
+        "wires": [
+            [
+                "905da4af020faf0e",
+                "3f197b92183975ae"
+            ]
+        ]
+    },
+    {
+        "id": "263860a7b9e15626",
+        "type": "DataOut",
+        "z": "4e236920ab8e1598",
+        "collection": "cc68217a7a40496d",
+        "name": "",
+        "path": "Tabela A2",
+        "error": true,
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "905da4af020faf0e",
+                "3f197b92183975ae"
+            ]
+        ]
+    },
+    {
+        "id": "ca545c62ed44ff67",
+        "type": "inject",
+        "z": "4e236920ab8e1598",
+        "name": "Time",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "100000",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "3dac765f69b7a236",
+                "263860a7b9e15626"
+            ]
+        ]
+    },
+    {
+        "id": "905da4af020faf0e",
+        "type": "function",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "func": "\nmsg.payload = msg.payload[0].soil_moisture_1;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "0f0d8946698aefe8"
+            ]
+        ]
+    },
+    {
+        "id": "0f0d8946698aefe8",
+        "type": "debug",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3f197b92183975ae",
+        "type": "debug",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e9e2aea8037513c1",
+        "type": "debug",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "da0109933f6ae258",
+        "type": "mysql",
+        "z": "4e236920ab8e1598",
+        "mydb": "d3d0b69d28c88fef",
+        "name": "Posting A2",
+        "x": 550,
+        "y": 40,
+        "wires": [
+            [
+                "e9e2aea8037513c1"
+            ]
+        ]
+    },
+    {
+        "id": "58addfb4d48694f7",
+        "type": "mysql",
+        "z": "4e236920ab8e1598",
+        "mydb": "6e212043a23c2aa5",
+        "name": "Posting A1",
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "e9e2aea8037513c1"
+            ]
+        ]
+    },
+    {
+        "id": "b608f6b441bf614a",
+        "type": "function",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "func": "var soil_moisture_1 = msg.payload.soil_moisture_1;\nvar pressure_1 = msg.payload.pressure_1*1000;\nvar humidity_1 = msg.payload.humidity_1;\nvar temperatury_1 = msg.payload.temperatury_1;\nvar msgf;\n\nmsg.topic = \"INSERT INTO tabela_a2 (soil_moisture_1, pressure_1, humidity_1, temperatury_1) VALUES (\"+ soil_moisture_1 +\",\"+ pressure_1 +\",\"+ humidity_1 +\",\"+ temperatury_1 +\" );\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 40,
+        "wires": [
+            [
+                "da0109933f6ae258"
+            ]
+        ]
+    },
+    {
+        "id": "abef82e4fb9da49a",
+        "type": "function",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "func": "var soil_moisture = msg.payload.soil_moisture;\nvar pressure = msg.payload.pressure*1000;\nvar humidity = msg.payload.humidity;\nvar temperatury = msg.payload.temperatury;\n\nmsg.topic = \"INSERT INTO tabela_a1 (soil_moisture, pressure, humidity, temperatury) VALUES (\"+ soil_moisture +\",\"+ pressure +\",\"+ humidity +\",\"+ temperatury +\" );\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "58addfb4d48694f7"
+            ]
+        ]
+    },
+    {
+        "id": "cb304137fe329fa3",
+        "type": "mqtt in",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "topic": "Setor",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "3dbb0e57.3e8602",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 50,
+        "y": 100,
+        "wires": [
+            [
+                "35c807756b61badf"
+            ]
+        ]
+    },
+    {
+        "id": "d9ef94c7bd1089ce",
+        "type": "mqtt in",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "topic": "Parametro",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "20acbb40fb0fff54",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 60,
+        "y": 40,
+        "wires": [
+            [
+                "cea81594dbac8f02"
+            ]
+        ]
+    },
+    {
+        "id": "cea81594dbac8f02",
+        "type": "json",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 210,
+        "y": 40,
+        "wires": [
+            [
+                "b608f6b441bf614a"
+            ]
+        ]
+    },
+    {
+        "id": "35c807756b61badf",
+        "type": "json",
+        "z": "4e236920ab8e1598",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 210,
+        "y": 100,
+        "wires": [
+            [
+                "abef82e4fb9da49a"
+            ]
+        ]
     }
 ]
